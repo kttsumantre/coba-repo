@@ -369,16 +369,76 @@
     </div>
   </section>
 
-<section id="menu" class="slide content-with-navbar hidden min-h-screen flex items-center justify-center bg-white">
-  <div class="text-center">
-    <h2 class="text-3xl font-bold text-gray-800 mb-4">Menu Kopi</h2>
-    <p class="text-gray-600 mb-6">Daftar menu akan ditampilkan di sini.</p>
-    <button onclick="showSlide('order')"
-            class="bg-amber-600 text-white px-6 py-3 rounded-full hover:bg-amber-700 transition">
-      Lihat Keranjang
-    </button>
-  </div>
-</section>
+<!-- menu kopi -->
+  <section id="menu" class="slide content-with-navbar bg-gradient-to-b from-amber-50 to-white py-12 md:py-16 lg:py-20 hidden min-h-screen">
+    <div class="container mx-auto px-4 md:px-6 max-w-7xl">
+      <!-- Header Menu -->
+      <div class="text-center mb-8 md:mb-10 lg:mb-12 animate-fade-in-up px-4">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 md:mb-3">Menu <span class="text-amber-700">Kopi Kami</span></h2>
+        <p class="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">Temukan cita rasa kopi sempurna yang diseduh khusus untuk Anda dari biji kopi pilihan terbaik</p>
+      </div>
+      
+      <!-- fungsi filter -->
+      <div class="flex flex-wrap justify-center gap-2 mb-6 md:mb-8 lg:mb-10 px-4">
+        <button class="category-btn active px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-amber-700 text-white font-medium shadow-lg text-sm md:text-base hover:shadow-xl transition-all duration-300" data-category="all">
+          <i class="fas fa-mug-hot mr-2"></i>Semua Menu
+        </button>
+        <button class="category-btn px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-white text-amber-700 font-medium shadow hover:bg-amber-50 text-sm md:text-base hover:shadow-xl transition-all duration-300" data-category="hot">
+          <i class="fas fa-fire mr-2"></i>Kopi Panas
+        </button>
+        <button class="category-btn px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-white text-amber-700 font-medium shadow hover:bg-amber-50 text-sm md:text-base hover:shadow-xl transition-all duration-300" data-category="cold">
+          <i class="fas fa-snowflake mr-2"></i>Kopi Dingin
+        </button>
+        <button class="category-btn px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-white text-amber-700 font-medium shadow hover:bg-amber-50 text-sm md:text-base hover:shadow-xl transition-all duration-300" data-category="spesial">
+          <i class="fas fa-star mr-2"></i>Spesial
+        </button>
+      </div>
+      
+      <div id="menu-items" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6 lg:gap-8 px-4 menu-grid">
+      </div>
+    </div>
+  </section>
+
+  <!-- Template Menu Item -->
+  <template id="menu-template">
+    <div class="card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-amber-100 hover:border-amber-300 flex flex-col h-full">
+      <!-- Badge Populer -->
+      <div class="absolute top-3 left-3 z-10">
+        <span class="bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">🔥 Terlaris</span>
+      </div>
+      
+      <!-- Gambar Menu -->
+      <div class="relative overflow-hidden h-48">
+      <img class="menu-img w-full h-56 object-cover transition-transform duration-300 hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+      </div>
+      
+      <!-- Konten Menu -->
+      <div class="p-5 flex-grow">
+        <h3 class="title text-lg font-bold text-gray-800 mb-2 text-center"></h3>
+        <p class="price text-amber-600 font-bold text-xl mb-4 text-center"></p>
+        
+        <!-- Counter Quantity -->
+        <div class="flex items-center justify-center space-x-3 mb-4">
+          <button class="minus bg-gray-100 hover:bg-red-500 hover:text-white text-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 shadow">
+            <i class="fas fa-minus"></i>
+          </button>
+          <div class="bg-amber-50 px-4 py-2 rounded-lg min-w-[50px]">
+            <span class="qty font-bold text-lg text-amber-700">0</span>
+          </div>
+          <button class="plus bg-gray-100 hover:bg-green-500 hover:text-white text-gray-700 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 shadow">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+        
+        <!-- Tombol Add to Cart -->
+        <button class="add-to-cart-btn w-full bg-gradient-to-r from-amber-500 to-amber-600 text-white py-2.5 rounded-lg font-semibold hover:from-amber-600 hover:to-amber-700 transition-all duration-300 flex items-center justify-center gap-2">
+          <i class="fas fa-cart-plus"></i>
+          Tambah ke Keranjang
+        </button>
+      </div>
+    </div>
+  </template>
 
 <section id="about" class="slide content-with-navbar hidden min-h-screen flex items-center justify-center bg-gray-50">
   <div class="text-center max-w-2xl px-6">
