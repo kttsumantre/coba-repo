@@ -62,19 +62,35 @@
     </ul>
   </nav>
 
-  <!-- HOME -->
-  <section id="home" class="slide pt-36 bg-cover bg-center relative"
-           style="background-image: url('foto_lainnya/kopibg.jpg');">
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="container mx-auto px-6 py-32 text-center text-white relative z-10">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6">Selamat Datang di CoffeeBean</h1>
-      <p class="text-lg mb-6">Nikmati kopi terbaik dengan cita rasa memikat.</p>
+<!-- HOME -->
+<section id="home" class="slide pt-36 bg-cover bg-center relative"
+  style="background-image: url('foto_lainnya/kopibg.jpg');">
+
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="container mx-auto px-6 py-32 text-center text-white relative z-10">
+    <h1 class="text-5xl font-bold mb-6 animate-fade-in">
+      Selamat Datang di CoffeeBean
+    </h1>
+
+    <p class="text-xl mb-8 max-w-xl mx-auto">
+      Temukan kopi pilihan terbaik dengan aroma dan rasa premium.
+    </p>
+
+    <div class="flex justify-center gap-4">
       <button onclick="showSlide('menu')"
-              class="bg-yellow-600 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-yellow-500 transition">
+        class="bg-yellow-600 px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition">
         Lihat Menu
       </button>
+
+      <button onclick="showSlide('about')"
+        class="border border-white px-6 py-3 rounded-full hover:bg-white hover:text-black transition">
+        Tentang Kami
+      </button>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- MENU -->
   <section id="menu" class="slide bg-yellow-50 py-20 pt-36 hidden">
