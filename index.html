@@ -8,164 +8,46 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100">
 
-  <!-- NAVBAR -->
-  <nav class="bg-white shadow-md fixed w-full z-10">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<nav class="bg-white shadow fixed w-full z-50">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <span class="font-bold text-xl">CoffeeBean</span>
 
-      <!-- Logo -->
-      <div class="flex items-center space-x-3">
-        <img src="foto_lainnya/logokopi.jpg" 
-             class="w-12 h-12 md:w-14 md:h-14 object-cover rounded-full" alt="Logo">
-        <span class="font-bold text-xl md:text-2xl text-gray-800">CoffeeBean</span>
-      </div>
-
-      <!-- Menu Desktop -->
-      <div class="hidden md:flex items-center space-x-6">
-        <ul class="flex space-x-6 font-medium text-gray-700">
-          <li><button onclick="showSlide('home')" class="hover:text-yellow-600 transition">Home</button></li>
-          <li><button onclick="showSlide('menu')" class="hover:text-yellow-600 transition">Menu</button></li>
-          <li><button onclick="showSlide('about')" class="hover:text-yellow-600 transition">About</button></li>
-        </ul>
-
-        <!-- Cart Desktop -->
-        <button id="cart-button" class="relative ml-4">
-          <img src="foto_lainnya/keranjang.jpg" class="w-8 h-8 object-contain">
-          <span id="cart-count-badge"
-                class="absolute -top-2 -right-2 bg-yellow-400 text-black rounded-full w-5 h-5 flex items-center justify-center text-xs">0</span>
-        </button>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div class="flex items-center md:hidden space-x-3">
-        <button id="cart-button-mobile" class="relative">
-          <img src="foto_lainnya/keranjang.jpg" class="w-6 h-6 object-contain">
-          <span id="cart-count-badge-mobile"
-            class="absolute -top-2 -right-2 bg-yellow-400 text-black rounded-full w-4 h-4 flex items-center justify-center text-xs">0</span>
-        </button>
-
-        <!-- Hamburger -->
-        <button id="hamburger" class="flex flex-col justify-between w-6 h-6">
-          <span class="h-0.5 bg-gray-700 rounded transition-all"></span>
-          <span class="h-0.5 bg-gray-700 rounded transition-all"></span>
-          <span class="h-0.5 bg-gray-700 rounded transition-all"></span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Dropdown Mobile -->
-    <ul id="nav-menu" class="hidden bg-white shadow-md px-4 py-4 space-y-2 font-medium text-gray-700 md:hidden">
-      <li><button data-target="home" class="block w-full text-left hover:text-yellow-600">Home</button></li>
-      <li><button data-target="menu" class="block w-full text-left hover:text-yellow-600">Menu</button></li>
-      <li><button data-target="about" class="block w-full text-left hover:text-yellow-600">About</button></li>
+    <ul class="hidden md:flex gap-6">
+      <li><button onclick="showSlide('home')">Home</button></li>
+      <li><button onclick="showSlide('menu')">Menu</button></li>
+      <li><button onclick="showSlide('order')">Order</button></li>
+      <li><button onclick="showSlide('about')">About</button></li>
     </ul>
-  </nav>
 
-<!-- HOME -->
-<section id="home" class="slide pt-36 bg-cover bg-center relative"
-  style="background-image: url('foto_lainnya/kopibg.jpg');">
-
-  <div class="absolute inset-0 bg-black/70"></div>
-
-  <div class="container mx-auto px-6 py-32 text-center text-white relative z-10">
-    <h1 class="text-5xl font-bold mb-6 animate-fade-in">
-      Selamat Datang di CoffeeBean
-    </h1>
-
-    <p class="text-xl mb-8 max-w-xl mx-auto">
-      Temukan kopi pilihan terbaik dengan aroma dan rasa premium.
-    </p>
-
-    <div class="flex justify-center gap-4">
-      <button onclick="showSlide('menu')"
-        class="bg-yellow-600 px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition">
-        Lihat Menu
-      </button>
-
-      <button onclick="showSlide('about')"
-        class="border border-white px-6 py-3 rounded-full hover:bg-white hover:text-black transition">
-        Tentang Kami
-      </button>
-    </div>
+    <button id="hamburger" class="md:hidden">☰</button>
   </div>
+</nav>
+
+<section id="home" class="slide pt-32 min-h-screen text-center">
+  <h1 class="text-4xl font-bold">Welcome to CoffeeBean</h1>
+  <p class="mt-4 text-gray-600">Template utama website CoffeeBean</p>
 </section>
 
-
-  <!-- MENU -->
-  <section id="menu" class="slide bg-yellow-50 py-20 pt-36 hidden">
-  <div class="container mx-auto px-6 text-center">
-    <h2 class="text-4xl font-bold mb-4">Menu Kopi Unggulan</h2>
-    <p class="text-gray-600 mb-10">Pilih kopi favoritmu hari ini</p>
-
-    <div id="menu-items"
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-    </div>
-  </div>
+<section id="menu" class="slide hidden pt-32 min-h-screen text-center">
+  <h2 class="text-3xl font-bold">Menu</h2>
+  <p class="text-gray-500 mt-2">Menu akan dikembangkan di branch menu</p>
 </section>
 
-
-  <!-- TEMPLATE MENU (styling sudah lengkap di HTML) -->
-  <template id="menu-template">
-    <div class="card p-6 bg-white rounded-xl shadow hover:shadow-lg transition flex flex-col items-center">
-      <img class="menu-img mb-4 rounded-lg w-full h-48 object-cover">
-      <h3 class="title text-xl font-bold mb-2 text-center"></h3>
-      <p class="price text-gray-600 mb-2 text-center"></p>
-      <div class="flex items-center justify-center space-x-2">
-        <button class="minus bg-red-500 text-white px-3 py-1 rounded-full">-</button>
-        <span class="qty">0</span>
-        <button class="plus bg-green-500 text-white px-3 py-1 rounded-full">+</button>
-      </div>
-    </div>
-  </template>
-
-  <!-- ORDER SECTION -->
-<section id="about" class="slide bg-white py-20 pt-36 hidden text-center">
-  <h2 class="text-4xl font-bold mb-6">Tentang CoffeeBean</h2>
-
-  <p class="text-gray-600 max-w-2xl mx-auto mb-6">
-    CoffeeBean berdiri untuk menghadirkan kopi berkualitas
-    dengan pengalaman terbaik bagi pelanggan.
-  </p>
-
-  <div class="grid md:grid-cols-3 gap-6 mt-10">
-    <div class="p-6 bg-yellow-50 rounded-lg shadow">
-      ☕ Biji Kopi Premium
-    </div>
-    <div class="p-6 bg-yellow-50 rounded-lg shadow">
-      👨‍🍳 Barista Profesional
-    </div>
-    <div class="p-6 bg-yellow-50 rounded-lg shadow">
-      🏆 Kualitas Terjamin
-    </div>
-  </div>
+<section id="order" class="slide hidden pt-32 min-h-screen text-center">
+  <h2 class="text-3xl font-bold">Order</h2>
+  <p class="text-gray-500 mt-2">Fitur order ada di branch order</p>
 </section>
 
-
-  <!-- ABOUT -->
-<section id="about" class="slide bg-white py-20 pt-36 hidden text-center">
-  <h2 class="text-4xl font-bold mb-6">Tentang CoffeeBean</h2>
-
-  <p class="text-gray-600 max-w-2xl mx-auto mb-6">
-    CoffeeBean berdiri untuk menghadirkan kopi berkualitas
-    dengan pengalaman terbaik bagi pelanggan.
-  </p>
-
-  <div class="grid md:grid-cols-3 gap-6 mt-10">
-    <div class="p-6 bg-yellow-50 rounded-lg shadow">
-      ☕ Biji Kopi Premium
-    </div>
-    <div class="p-6 bg-yellow-50 rounded-lg shadow">
-      👨‍🍳 Barista Profesional
-    </div>
-    <div class="p-6 bg-yellow-50 rounded-lg shadow">
-      🏆 Kualitas Terjamin
-    </div>
-  </div>
+<section id="about" class="slide hidden pt-32 min-h-screen text-center">
+  <h2 class="text-3xl font-bold">About CoffeeBean</h2>
+  <p class="text-gray-500 mt-2">Cerita lengkap ada di branch about</p>
 </section>
 
-  <!-- JS -->
-  <script src="script.js"></script>
+<footer class="bg-gray-900 text-white text-center py-6">
+  © 2024 CoffeeBean
+</footer>
 
+<script src="script.js"></script>
 </body>
-</html>
